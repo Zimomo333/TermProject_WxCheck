@@ -53,14 +53,11 @@ Page({
       this.showModal(error)
       return false
     }
-    wx.navigateTo({
-      url: '/pages/home/home'
-    })
     wx.request({
       url: app.globalData.ip+'/wx/inspector/login',
       data: {
-        username: this.username,
-        password: this.password
+        username: params.username,
+        password: params.password
       },
       success: res => {
         var result = res.data.result

@@ -85,7 +85,7 @@ Page({
         resident_id: this.id,
         inspector_id: app.globalData.id,
         time: Date.parse(new Date()),
-        temperature: this.form.temperature
+        temperature: params.temperature
       },
       success: res => {
         var result = res.data.result
