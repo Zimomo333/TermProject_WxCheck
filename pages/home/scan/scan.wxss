@@ -1,0 +1,11 @@
+/* pages/home/scan/scan.wxss */
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}

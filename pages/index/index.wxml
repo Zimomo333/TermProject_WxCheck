@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+  </swiper-item>
+</swiper>
+<view class="text-center text-shadow text-purple text-bold" style="font-size:25px;margin-top:30px;">
+  智慧社区检查端
+</view>
+<view class="index">
+  <button class="cu-btn bg-olive lg" style="margin-top: 50px;" bindtap="goToWxLogin">
+  <text class="cuIcon-weixin" style="font-size:18px">　微信登录</text></button>
+  <button class="cu-btn bg-cyan lg" style="margin-top: 50px;" bindtap="goToLogin">
+  <text class="cuIcon-myfill" style="font-size:18px">　账号登录</text></button>
+</view>
