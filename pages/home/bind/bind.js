@@ -37,7 +37,9 @@ Page({
             content: "绑定成功",
             showCancel: false,
           })
-          this.is_bind=true
+          this.setData({
+            is_bind: true
+          })
         } else {
           wx.showModal({
             content: "绑定失败",
@@ -59,7 +61,9 @@ Page({
             content: "解绑成功",
             showCancel: false,
           })
-          this.is_bind=false
+          this.setData({
+            is_bind: false
+          })
         } else {
           wx.showModal({
             content: "解绑失败",

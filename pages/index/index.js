@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     openid: null,
-    bindSign: false,
+    bindSign: null,
     cardCur: 0,
     swiperList: [{
       id: 0,
@@ -58,11 +58,12 @@ Page({
     })
   },
   goToWxLogin: function(e) {
-    if(this.bindSign){
+    console.log(this.data.bindSign)
+    if(this.data.bindSign){
       wx.request({
         url: app.globalData.ip+'/wx/inspector/wx-login',
         data: {
-          openid: this.openid
+          openid: this.data.openid
         },
         success: res => {
           app.globalData.id = res.data.id
