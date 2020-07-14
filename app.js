@@ -13,7 +13,7 @@ App({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: this.globalData.ip+'/wx/resident/getOpenid',
+            url: this.globalData.ip+'/wx/inspector/getOpenid',
             data: {
               code: res.code
             },

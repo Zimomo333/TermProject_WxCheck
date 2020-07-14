@@ -78,11 +78,10 @@ Page({
       this.showModal(error)
       return false
     }
-    console.log(this.form.temperature)
     wx.request({
       url: app.globalData.ip+'/wx/inspector/create-record',
       data: {
-        resident_id: this.id,
+        resident_id: this.data.id,
         inspector_id: app.globalData.id,
         time: Date.parse(new Date()),
         temperature: params.temperature
@@ -90,11 +89,11 @@ Page({
       success: res => {
         var result = res.data.result
         if(result == 0){
-          this.showModal({
-            msg: '录入成功'
-          })
           wx.navigateTo({
             url: '/pages/home/home'
+          })
+          this.showModal({
+            msg: '录入成功'
           })
         } else if (result == 1) {
           this.showModal({
